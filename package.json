@@ -10,5 +10,11 @@
     "prisma": "^4.13.0",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
+  },
+  "prisma": {
+    "seed": "ts-node ./prisma/seeds.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0"
   }
 }

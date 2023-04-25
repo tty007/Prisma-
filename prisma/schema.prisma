@@ -12,17 +12,19 @@ datasource db {
 
 model User {
   id Int @id @default(autoincrement())
-  name String?
   email String @unique
+  name String?
   posts Post[]
-
 }
 
 model Post {
   id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   title String
   content String?
   published Boolean @default(false)
+  viewCount Int @default(0)
   auther User? @relation(fields: [autherId], references: [id])
   autherId Int?
 }
